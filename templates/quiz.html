@@ -1,0 +1,14 @@
+<p>Q. {{quiz.question}}</p>
+
+<div>
+<ol>
+{% for option in quiz_option%}
+<li>
+    {{option.content}}
+    <a href="http://localhost:8000/quiz/1/options/{{option.id}}/check" target="_blank">정답</a>
+</li>
+
+{% endfor %}
+</ol>   
+</div>
+<a href="/quiz/{{quiz.id|add:1}}">다음문제 >></a>
